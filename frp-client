@@ -1,6 +1,6 @@
 FROM busybox:latest
 
-ADD fs/ /
+ADD client-fs/ /
 
 VOLUME ["/data/log"]
 
