@@ -1,0 +1,12 @@
+FROM busybox:latest
+
+ADD fs/ /
+
+EXPOSE 80/tcp 443/tcp 80/udp 443/udp 7000/tcp 
+
+VOLUME ["/data/log"]
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["frps", "-c", "/etc/conf/frps.ini"]
+
