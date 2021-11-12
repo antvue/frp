@@ -1,0 +1,10 @@
+FROM arm64v8/busybox
+
+ADD client-arm64v8-fs/ /
+
+VOLUME ["/data/log"]
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["frpc", "-c", "/etc/conf/frpc.ini"]
+
