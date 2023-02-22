@@ -45,3 +45,16 @@ services:
         local_port = 8080
 
 ```
+
+### builid
+```bash
+docker build -f frp-client -t antvue/frp:client-v1 --squash .
+docker build -f frp-server -t antvue/frp:server-v1 --squash .
+docker build -f frp-client-arm64v8 -t antvue/frp:client-arm64v8-v1 --squash .
+docker build -f frp-server-arm64v8 -t antvue/frp:server-arm64v8-v1 --squash .
+docker push antvue/frp:client-v1
+docker push antvue/frp:client-arm64v8-v1
+docker push antvue/frp:server-arm64v8-v1
+docker push antvue/frp:server-v1
+```
+
